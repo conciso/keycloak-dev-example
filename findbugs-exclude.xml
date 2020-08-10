@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+    <Match>
+        <Class name="~.+\.Immutable.+"/>
+        <Method name="createSafeList"/>
+        <Bug pattern="UPM_UNCALLED_PRIVATE_METHOD"/>
+    </Match>
+    <Match>
+        <Class name="~.+\.Immutable.+"/>
+        <Method name="equals" />
+        <Bug pattern="NP_METHOD_PARAMETER_TIGHTENS_ANNOTATION" />
+    </Match>
+    <Match>
+        <Class name="~.+\.Immutable.+" />
+        <Bug pattern="IS2_INCONSISTENT_SYNC,JCIP_FIELD_ISNT_FINAL_IN_IMMUTABLE_CLASS"/>
+    </Match>
+</FindBugsFilter>

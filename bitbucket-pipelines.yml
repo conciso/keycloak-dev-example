@@ -1,0 +1,22 @@
+---
+image: adoptopenjdk/maven-openjdk11:latest
+options:
+  docker: true
+
+pipelines:
+  pull-requests:
+    '**': #this runs as default for any branch not elsewhere defined
+      - step:
+          caches:
+            - maven
+            - docker
+          script:
+            - mvn verify
+  branches:
+    master:
+      - step:
+          caches:
+            - maven
+            - docker
+          script:
+            - mvn install

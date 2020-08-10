@@ -1,0 +1,8 @@
+version: '3'
+services:
+  keycloak:
+    image: conciso-keycloak
+    ports:
+      - "10080:8080"
+    volumes:
+      - ./keycloak:/tmp/export
